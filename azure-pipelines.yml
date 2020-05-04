@@ -12,7 +12,6 @@ pool:
 
 
 steps:
-- script: ./buildSomething.sh
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
