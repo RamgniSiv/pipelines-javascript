@@ -10,17 +10,23 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
 steps:
+- script: ./buildSomething.sh
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
+
+
 
 - script: |
     npm install
     npm run build
   displayName: 'npm install and build'
 
-  - task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+
