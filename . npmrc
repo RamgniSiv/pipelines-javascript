@@ -1,0 +1,3 @@
+registry=https://pkgs.dev.azure.com/ADOPT-TEST/_packaging/ADOPT-TEST/npm/registry/
+
+always-auth=true
